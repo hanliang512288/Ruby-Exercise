@@ -1,0 +1,43 @@
+<h2>Web View of Data</h2> 
+<p>Last update time :<%=Datarecord.last.update_time%></p>
+ <table border="1"> 
+  <thead> 
+  <tr> 
+    <th></th> 
+    <th colspan="5">Data from Bureau of Melbourne</th> 
+    <th colspan="5">Data from ForecastAPI</th> 
+  </tr> 
+  <tr> 
+    <th ></th> 
+    <th>Current Temperature(℃)</th> 
+    <th>Dew Point(℃)</th> 
+    <th>Wind Direction(degree)</th> 
+    <th>Wind Speed(km/h)</th> 
+    <th>Rainfall(Since 9 am mm)</th> 
+    <th>Current Temperature(℃)</th> 
+    <th>Dew Point(℃)</th> 
+    <th>Wind Direction(degree)</th> 
+    <th>Wind Speed(km/h)</th> 
+    <th>Rainfall(Since 9 am mm)</th> 
+  </tr> 
+
+  </thead>   
+  <tbody> 
+  <%for i in (0..Location.get_location_quantity-1)%> 
+      <tr> 
+        <td><%=@location_hash["#{i}"]["location"]%></td> 
+        <td><%=@bom_temp["#{@location_hash["#{i}"]["location"]}"]["temp"] %></td> 
+        <td><%=@bom_temp["#{@location_hash["#{i}"]["location"]}"]["dew_point"]%></td> 
+        <td><%=@bom_wind["#{@location_hash["#{i}"]["location"]}"]["wind_direction"]%></td> 
+        <td><%=@bom_wind["#{@location_hash["#{i}"]["location"]}"]["wind_speed"]%></td> 
+        <td><%=@bom_rain["#{@location_hash["#{i}"]["location"]}"]["rain_fall"] %></td> 
+        <td><%=@api_temp["#{@location_hash["#{i}"]["location"]}"]["temp"]%></td> 
+        <td><%=@api_temp["#{@location_hash["#{i}"]["location"]}"]["dew_point"]%></td> 
+        <td><%=@api_wind["#{@location_hash["#{i}"]["location"]}"]["wind_direction"]%></td> 
+        <td><%=@api_wind["#{@location_hash["#{i}"]["location"]}"]["wind_speed"]%></td> 
+        <td><%=@api_rain["#{@location_hash["#{i}"]["location"]}"]["rain_fall"] %></td> 
+      </tr> 
+  <%end%>    
+  </tbody>  
+</table>  
+

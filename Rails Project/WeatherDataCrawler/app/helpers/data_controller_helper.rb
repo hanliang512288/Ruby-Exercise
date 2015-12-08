@@ -1,0 +1,2 @@
+module DataControllerHelper
+end

@@ -1,0 +1,17 @@
+<h1>Data by Location</h1>
+<p>{</p>
+	<p style="text-indent: 1cm">"date": <%= @location_data["date"]%></p>
+	<p style="text-indent: 1cm">"current_temp": <%= @location_data["current_temp"]%></p>
+	<p style="text-indent: 1cm">"current_cond": <%= @location_data["current_cond"]%></p>
+	<p style="text-indent: 1cm">"measurements": [</p>
+	<% for i in 0...@location_data["measurements"].length %>
+	    <p style="text-indent: 1.5cm">{</p>
+		<p style="text-indent: 2cm">"time": <%= @location_data["measurements"][i]["time"] %></p>
+		<p style="text-indent: 2cm">"temp": <%= @location_data["measurements"][i]["temp"] %></p>
+		<p style="text-indent: 2cm">"precip": <%= @location_data["measurements"][i]["precip"] %></p>
+		<p style="text-indent: 2cm">"wind_direction": <%= @location_data["measurements"][i]["wind_direction"] %></p>
+		<p style="text-indent: 2cm">"wind_speed": <%= @location_data["measurements"][i]["wind_speed"] %></p>
+	    <p style="text-indent: 1.5cm">}</p>
+	<% end %>
+	<p style="text-indent: 1cm">]</p>
+<p>}</p>

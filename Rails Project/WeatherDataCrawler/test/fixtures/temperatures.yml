@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  curr_temp: 1.5
+  dew_point: 1.5
+
+two:
+  curr_temp: 1.5
+  dew_point: 1.5

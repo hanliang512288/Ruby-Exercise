@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wind_speed: 1.5
+  wind_direction: MyString
+
+two:
+  wind_speed: 1.5
+  wind_direction: MyString

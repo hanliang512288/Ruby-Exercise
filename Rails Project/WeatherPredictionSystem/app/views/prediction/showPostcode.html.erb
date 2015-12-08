@@ -1,0 +1,31 @@
+<h1>Prediction by Postcode</h1>
+<p>{</p>
+	<p style="text-indent: 1cm">"postcode": <%= @prediction_postcode[:postcode] %></p>
+	<p style="text-indent: 1cm">"predictions":{</p>
+	<% @prediction_postcode[:main_predictions][:predictions].each do |key,value| %>
+		<p style="text-indent: 1.5cm"><%= "\"#{key}\":" %>{</p>
+		<% if key == "0" %>
+		<p style="text-indent: 2cm">"time":<%= value[:time] %></p>
+		<p style="text-indent: 1.5cm">}</p>
+		<% else %>
+			<p style="text-indent: 2cm">"time":<%= value[:time] %></p>
+			<p style="text-indent: 2cm">"rain":{</p>
+			<p style="text-indent: 3cm">"value":<%= value[:rain][:value] %></p>
+			<p style="text-indent: 3cm">"probability":<%= value[:rain][:probablity] %></p>
+			<p style="text-indent: 2cm">}</p>
+			<p style="text-indent: 2cm">"temp":{</p>
+			<p style="text-indent: 3cm">"value":<%= value[:temperature][:value] %></p>
+			<p style="text-indent: 3cm">"probability":<%= value[:temperature][:probablity] %></p>
+			<p style="text-indent: 2cm">}</p>
+			<p style="text-indent: 2cm">"wind_direction":{</p>
+			<p style="text-indent: 3cm">"value":<%= value[:winddirection][:value] %></p>
+			<p style="text-indent: 3cm">"probability":<%= value[:winddirection][:probablity] %></p>
+			<p style="text-indent: 2cm">}</p>
+			<p style="text-indent: 2cm">"windspeed":{</p>
+			<p style="text-indent: 3cm">"value":<%= value[:windspeed][:value] %></p>
+			<p style="text-indent: 3cm">"probability":<%= value[:windspeed][:probablity] %></p>
+			<p style="text-indent: 2cm">}</p>
+		<% end %>
+	<% end %>
+	<p style="text-indent: 1cm">}</p>
+<p>}</p>

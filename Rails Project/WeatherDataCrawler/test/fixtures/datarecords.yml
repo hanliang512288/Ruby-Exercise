@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  update_time: 1
+  record_source: MyString
+  record_type: MyString
+
+two:
+  update_time: 1
+  record_source: MyString
+  record_type: MyString

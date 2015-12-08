@@ -1,0 +1,23 @@
+<h1>Data by Postcode</h1>
+<p>{</p>
+	<p style="text-indent: 1cm">"date": <%= @postcode_data["date"]%></p>
+	<% for i in 0...@postcode_data["locations"].length %>
+	    <p style="text-indent: 1cm">"locations":[</p>
+		<p style="text-indent: 2cm">{</p>
+		<p style="text-indent: 2cm">"id": <%= @postcode_data["locations"][i]['id'] %></p>
+    	<p style="text-indent: 2cm">"lat": <%= @postcode_data["locations"][i]['lat'] %></p>
+    	<p style="text-indent: 2cm">"lon": <%= @postcode_data["locations"][i]['lon'] %></p>
+    	<p style="text-indent: 2cm">"last_update": <%= @postcode_data["locations"][i]['last_update'] %></p>
+		<p style="text-indent: 2cm">"measurements":[</p>
+		<% for j in 0...@postcode_data["locations"][i]["measurements"].length %>
+	    	<p style="text-indent: 1.5cm">{</p>
+			<p style="text-indent: 2cm">"time": <%= @postcode_data["locations"][i]["measurements"][j]["time"] %></p>
+			<p style="text-indent: 2cm">"temp": <%= @postcode_data["locations"][i]["measurements"][j]["temp"] %></p>
+			<p style="text-indent: 2cm">"precip": <%= @postcode_data["locations"][i]["measurements"][j]["precip"] %></p>
+			<p style="text-indent: 2cm">"wind_direction": <%= @postcode_data["locations"][i]["measurements"][j]["wind_direction"] %></p>
+			<p style="text-indent: 2cm">"wind_speed": <%= @postcode_data["locations"][i]["measurements"][j]["wind_speed"] %></p>
+	    	<p style="text-indent: 1.5cm">}</p>
+		<% end %>
+		<p style="text-indent: 1cm">]</p>
+	<% end %>
+<p>}</p>

@@ -1,0 +1,2 @@
+module WeatherdataHelper
+end
